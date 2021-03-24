@@ -1,0 +1,137 @@
+@import './variables';
+@import './setup';
+@import './mixins';
+
+body {
+  background-color: $deepForest;
+}
+  
+main {
+  background-image: url(../assets/treebark.jpg); 
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gradient {
+  background: linear-gradient(180deg, rgba(35,35,25,0.6608695652173913) 0%, rgba(35,35,25,0.8686979293823243) 11%, rgba(35,35,25,0.9449275362318841) 22%, rgba(35,35,25,1) 31%);
+  height: 100vh;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+  padding: 50px 40px;
+  text-shadow: 8px 6px 3px black;
+  position: relative
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 10px 15px;
+  width: 230px;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 3px $deepForest;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+label,
+select,
+a,
+p {
+  font-size: 1.3rem;
+  text-transform: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+
+  select {
+    border: none;
+    background-color: $bark;
+    outline: 0;
+    appearance: none;
+    height: 40px;
+    width: 300px;
+    transition: all 0.6s ease-in;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    @include mobileMQ {
+      width: 80%;
+      max-width: 300px;
+    }
+  }
+
+  select:hover {
+    background-color: $birch;
+    cursor: pointer;
+  }
+
+  option {
+    color: $deepForest;
+    font-size: 1.2rem;
+    background-color: $bark;
+    position: absolute;
+  }
+}
+
+#cardHolder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+  margin-top: 50px;
+
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 7px solid $bark;
+    margin: 20px;
+    background: $forest;
+    padding: 10px;
+    box-shadow: 5px 5px 20px -5px black;
+    max-height: 500px;
+    transition: ease-in-out all 0.4s;
+
+    .imageContainer {
+      height: 280px;
+      width: 200px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 67% 0;
+      box-shadow: 10px 10px 10px $deepForest;
+
+      .defaultImage {
+        object-fit: cover;
+        object-position: top;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.plantInfoContainer {
+  height: 280px;
+  width: 200px;
+  margin: 20px auto;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px $deepForest;
+  transition: all 0.6s ease-in;
+
+  .plantInfoImage {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    width: 100%;
+  }
+}
